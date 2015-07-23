@@ -1,18 +1,11 @@
-
-# This is the user-interface definition of a Shiny web application.
-# You can find out more about building applications with Shiny here:
-#
-# http://shiny.rstudio.com
-#
-
 library(shiny)
 
 shinyUI(fluidPage(
 
-  # Application title
+  # Title
   titlePanel("Variable Relatioship (mtcars)"),
 
-  # Sidebar with a slider input for number of bins
+  # Sidebar
   sidebarLayout(
     sidebarPanel(
       selectInput("variable", "Variable:",
@@ -26,10 +19,11 @@ shinyUI(fluidPage(
                     "Transmission" = "am",
                     "# gears" = "gear",
                     "# carburetors" = "carb"
-                  ))
+                  )),
+      checkboxInput("outliers", "Show Outliers", FALSE)    
     ),
 
-    # Show a plot of the generated distribution
+    # Show two plots and summary data
     mainPanel(
       tabsetPanel(type = "tabs", 
         tabPanel('Graphics',
@@ -39,11 +33,10 @@ shinyUI(fluidPage(
           plotOutput("my_regression")
         ),
         tabPanel('Data',
-                 h2('Linear Model Info'),
+                 h2('Linear Model Summary'),
                  verbatimTextOutput("my_fit")
         )
       )
     )  
   )
-)
-)
+  ))

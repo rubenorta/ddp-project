@@ -22,7 +22,8 @@ shinyServer(function(input, output) {
 
   output$my_boxplot <- renderPlot({
     boxplot(as.formula(formulaText()), 
-            data = my_data)
+            data = my_data,
+            outline = input$outliers)
   })
   
   # Second Plot
