@@ -25,7 +25,15 @@ shinyUI(fluidPage(
 
     # Show two plots and summary data
     mainPanel(
-      tabsetPanel(type = "tabs", 
+      tabsetPanel(type = "tabs",
+        tabPanel('Info',
+                 h2('Use'),
+                 tags$ul(
+                   tags$li("Select the variable to which you want to predict consumption."), 
+                   tags$li("Select whether you want the outliners are included in the output or not."), 
+                   tags$li("Explore the graphics relating to both variables."),
+                   tags$li("Enter details in all the variables related to the linear model.")
+                 )),
         tabPanel('Graphics',
           h2('Boxplot'),
           plotOutput("my_boxplot"),
