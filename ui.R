@@ -28,6 +28,7 @@ shinyUI(fluidPage(
       tabsetPanel(type = "tabs",
         tabPanel('Info',
                  h2('Use'),
+                 p("The application will show the box plot and the graph of the linear model of the selected variable and the 'miles per gallon' variable (mpg)"),
                  tags$ul(
                    tags$li("Select the variable to which you want to predict consumption."), 
                    tags$li("Select whether you want the outliners are included in the output or not."), 
